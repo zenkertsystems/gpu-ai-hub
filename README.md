@@ -30,7 +30,7 @@ entrypoint.
 - Ollama job execution and remote worker heartbeats
 - model profiles with explicit pull commands
 - Docker control plane plus Linux/macOS and Windows bootstrap scripts
-- seven curated ComfyUI image, video, upscale, and 3D workflows
+- nine curated ComfyUI image, LoRA, video, upscale, and 3D workflows
 - required ComfyUI custom nodes in the creative container image
 - faster-whisper transcription API with CPU and NVIDIA modes
 - Caddy gateway on port 80

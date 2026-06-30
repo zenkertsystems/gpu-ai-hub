@@ -139,6 +139,34 @@
       "manual": true,
       "target": "loras/wan2.2/wan2.2_i2v_A14b_low_noise_lora_rank64_lightx2v_4step_1022.safetensors",
       "note": "Workflow acceleration LoRA. User must accept the upstream license and place it at this path."
+    },
+    {
+      "id": "sdxl-vae-fix-local",
+      "tier": "local",
+      "manual": true,
+      "target": "checkpoints/SDXL/sdXL_v10VAEFix.safetensors",
+      "note": "Locally validated SDXL checkpoint for LoRA starter workflows. User must provide the file."
+    },
+    {
+      "id": "lora-add-detail-xl",
+      "tier": "local",
+      "manual": true,
+      "target": "loras/SDXL/add-detail-xl.safetensors",
+      "note": "Detail LoRA used by the SDXL LoRA starter workflows. User must provide the file."
+    },
+    {
+      "id": "lora-crown-realism",
+      "tier": "local",
+      "manual": true,
+      "target": "loras/SDXL/Crown Realism.safetensors",
+      "note": "Realism LoRA used by the three-LoRA SDXL workflow. User must provide the file."
+    },
+    {
+      "id": "lora-sdxl-lightning-8step",
+      "tier": "local",
+      "manual": true,
+      "target": "loras/SDXL/sdxl_lightning_8step_lora.safetensors",
+      "note": "Lightning LoRA used by the three-LoRA SDXL workflow. User must provide the file."
     }
   ],
   "workflows": [
@@ -230,6 +258,34 @@
         "wan-low-noise",
         "wan-lora-high",
         "wan-lora-low"
+      ]
+    },
+    {
+      "id": "text-to-image-sdxl-lora-safe",
+      "file": "text_to_image_sdxl_lora_safe.json",
+      "tier": "local",
+      "title": "SDXL text to image with LoRA",
+      "nodes": [
+        "core"
+      ],
+      "models": [
+        "sdxl-vae-fix-local",
+        "lora-add-detail-xl"
+      ]
+    },
+    {
+      "id": "text-to-image-sdxl-3-loras-safe",
+      "file": "text_to_image_sdxl_3_loras_safe.json",
+      "tier": "local",
+      "title": "SDXL text to image with three LoRAs",
+      "nodes": [
+        "core"
+      ],
+      "models": [
+        "sdxl-vae-fix-local",
+        "lora-add-detail-xl",
+        "lora-crown-realism",
+        "lora-sdxl-lightning-8step"
       ]
     }
   ]
